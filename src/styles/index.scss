@@ -71,6 +71,9 @@ a:hover {
 //main-container全局样式
 .app-main {
   min-height: 100%;
+  background-color: #fcfcfc;
+  padding: 20px;
+  
 }
 
 code {
@@ -91,9 +94,11 @@ code {
 }
 
 .app-container {
-  padding: 20px;
   box-sizing: border-box;
-  overflow-y: scroll;
+
+	border-radius: 10px;
+  background-color: white;
+  padding: 20px;
 }
 
 .components-container {
@@ -160,4 +165,16 @@ code {
 
 .el-submenu__title i{
   color: white !important;
+}
+
+.row-input{
+  display: flex;
+}
+
+
+.el-table th, .el-table thead {
+    background-color: #f0f0f5;
+	height:40px;
+	color: #909399;
+	font-weight: 500;
 }

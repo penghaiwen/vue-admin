@@ -2,9 +2,9 @@ import Vue from 'vue'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+// import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 import '../static/css/iconfont/1.0.0/index.css' /* icofont*/
-
+import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 // css
 import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 import '@/styles/index.scss' // global css
@@ -13,6 +13,9 @@ import './mock' // simulation data
 
 // font-awesome
 import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'
+
+// 注册全局组件
+import '@/utils/overallComponent.js';
 
 import App from './App'
 
@@ -41,7 +44,7 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-Vue.use(ElementUI, { locale })
+Vue.use(ElementUI, { zhLocale })
 iconfontVersion.forEach(ele => {
   loadStyle(iconfontUrl.replace('$key', ele))
 })

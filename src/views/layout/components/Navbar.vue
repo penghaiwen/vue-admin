@@ -12,8 +12,8 @@
 
 
 
-      <!-- <lang-select class="international right-menu-item"></lang-select> -->
-      <!-- <nx-lang-select class="international right-menu-item"></nx-lang-select> -->
+      <!-- <lang-select class="international right-menu-item"></lang-select>
+      <nx-lang-select class="international right-menu-item"></nx-lang-select> -->
 
 
       <span class="right-menu-item">老默-False</span>
