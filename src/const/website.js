@@ -1,7 +1,7 @@
 export default {
   title: '管理系统',
   logo: 'N',
-  author: 'BY nxmin',
+  author: '',
   whiteList: ['/login', '/404', '/401', '/lock'],
   lockPage: '/lock',
   info: {
