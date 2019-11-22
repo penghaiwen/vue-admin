@@ -111,6 +111,32 @@ export const constantRouterMap = [
       }
 
     ]
+  },
+  // 系统设置
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '',
+    name: 'system',
+    meta: {
+      title: '系统管理',
+      icon: 'table'
+    },
+    children: [
+      {
+        path: 'menu',
+        name: 'menu',
+        component: () => import('@/views/system/menu'),
+        meta: { title: '菜单管理' }
+      },
+      {
+        path: 'TreeTable',
+        name: 'TreeTable',
+        component: () => import('@/views/table/tree-table/index'),
+        meta: { title: 'treeTable' }
+      }
+
+    ]
   }
 
 ]
