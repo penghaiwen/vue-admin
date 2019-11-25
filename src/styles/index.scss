@@ -73,7 +73,7 @@ a:hover {
   min-height: 100%;
   background-color: #fcfcfc;
   padding: 20px;
-  
+
 }
 
 code {
@@ -177,4 +177,8 @@ code {
 	height:40px;
 	color: #909399;
 	font-weight: 500;
+}
+
+.el-dialog .el-input, .el-dialog .el-select {
+    width: 250px;
 }

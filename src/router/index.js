@@ -127,7 +127,7 @@ export const constantRouterMap = [
         path: 'menu',
         name: 'menu',
         component: () => import('@/views/system/menu'),
-        meta: { title: '菜单管理' }
+        meta: { title: '菜单管理',noCache:true }
       },
       {
         path: 'TreeTable',
