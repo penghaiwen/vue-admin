@@ -23,143 +23,213 @@ import Layout from '../views/layout/Layout'
   }
 **/
 export const constantRouterMap = [
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/login',
-  //   name: 'login',
-  //   hidden: true
-  // },
-  {
-    path: '',
-    component: Layout,
-    redirect: '/dashboard/dashboard'
-  },
-  { path: '/login', component: () => import('@/views/login'), name: '登录管理系统', hidden: true },
-  { path: '/404', component: () => import('@/views/errorPage/404'), hidden: true },
-  { path: '/401', component: () => import('@/views/errorPage/401'), hidden: true },
-
-  // 报表
-  {
-    path: '/dashboard',
-    component: Layout,
-    meta: { title: 'dashboard', icon: 'dashboard' },
-    children: [
-      {
-        path: 'dashboard',
-        name: 'dashboard',
-        component: () => import('@/views/dashboard/dashboard'),
-        meta: { title: 'dashboard', icon: 'dashboard' }
-      }
-    ]
-  },
-
-  // 表单
-  {
-    path: '/form',
-    component: Layout,
-    redirect: '/table/BaseForm',
-    name: 'form',
-    meta: {
-      title: 'form',
-      icon: 'form'
+    // {
+    //   path: '/',
+    //   component: Layout,
+    //   redirect: '/login',
+    //   name: 'login',
+    //   hidden: true
+    // },
+    {
+        path: '',
+        component: Layout,
+        redirect: '/dashboard/dashboard'
     },
-    children: [
-      {
-        path: 'BaseForm',
-        name: 'BaseForm',
-        component: () => import('@/views/form/BaseForm'),
-        meta: { title: 'BaseForm' }
-      },
-      {
-        path: 'VueEditor',
-        name: 'VueEditor',
-        component: () => import('@/views/form/VueEditor'),
-        meta: { title: 'VueEditor' }
-      },
-      {
-        path: 'Upload',
-        name: 'Upload',
-        component: () => import('@/views/form/Upload'),
-        meta: { title: 'Upload' }
-      }
-    ]
-  },
-
-  // 表格
-  {
-    path: '/table',
-    component: Layout,
-    redirect: '/table/complex-table',
-    name: 'table',
-    meta: {
-      title: 'Table',
-      icon: 'table'
+    {
+        path: '/login',
+        component: () => import('@/views/login'),
+        name: '登录管理系统',
+        hidden: true
     },
-    children: [
-      {
-        path: 'complex-table',
-        name: 'complex-table',
-        component: () => import('@/views/table/complex-table'),
-        meta: { title: 'complexTable' }
-      },
-      {
-        path: 'TreeTable',
-        name: 'TreeTable',
-        component: () => import('@/views/table/tree-table/index'),
-        meta: { title: 'treeTable' }
-      }
-
-    ]
-  },
-  // 系统设置
-  {
-    path: '/system',
-    component: Layout,
-    redirect: '',
-    name: 'system',
-    meta: {
-      title: '系统管理',
-      icon: 'table'
+    {
+        path: '/404',
+        component: () => import('@/views/errorPage/404'),
+        hidden: true
     },
-    children: [
-      {
-        path: 'menu',
-        name: 'menu',
-        component: () => import('@/views/system/menu'),
-        meta: { title: '菜单管理',noCache:true }
-      },
-      {
-        path: 'TreeTable',
-        name: 'TreeTable',
-        component: () => import('@/views/table/tree-table/index'),
-        meta: { title: 'treeTable' }
-      }
+    {
+        path: '/401',
+        component: () => import('@/views/errorPage/401'),
+        hidden: true
+    },
 
-    ]
-  }
+    // 报表
+    {
+        path: '/dashboard',
+        component: Layout,
+        meta: {
+            title: 'dashboard',
+            icon: 'dashboard'
+        },
+        children: [{
+            path: 'dashboard',
+            name: 'dashboard',
+            component: () => import('@/views/dashboard/dashboard'),
+            meta: {
+                title: 'dashboard',
+                icon: 'dashboard'
+            }
+        }]
+    },
+
+    // 表单
+    {
+        path: '/form',
+        component: Layout,
+        redirect: '/table/BaseForm',
+        name: 'form',
+        meta: {
+            title: 'form',
+            icon: 'form'
+        },
+        children: [{
+                path: 'BaseForm',
+                name: 'BaseForm',
+                component: () => import('@/views/form/BaseForm'),
+                meta: {
+                    title: 'BaseForm'
+                }
+            },
+            {
+                path: 'VueEditor',
+                name: 'VueEditor',
+                component: () => import('@/views/form/VueEditor'),
+                meta: {
+                    title: 'VueEditor'
+                }
+            },
+            {
+                path: 'Upload',
+                name: 'Upload',
+                component: () => import('@/views/form/Upload'),
+                meta: {
+                    title: 'Upload'
+                }
+            }
+        ]
+    },
+
+    // 表格
+    {
+        path: '/table',
+        component: Layout,
+        redirect: '/table/complex-table',
+        name: 'table',
+        meta: {
+            title: 'Table',
+            icon: 'table'
+        },
+        children: [{
+                path: 'complex-table',
+                name: 'complex-table',
+                component: () => import('@/views/table/complex-table'),
+                meta: {
+                    title: 'complexTable'
+                }
+            },
+            {
+                path: 'TreeTable',
+                name: 'TreeTable',
+                component:Layout,
+                meta: {
+                    title: 'treeTable'
+                },
+                children: [
+                    {
+                        path: 'TreeTable222',
+                        name: 'TreeTable222',
+                        component: () => import('@/views/table/tree-table/index'),
+                        meta: {
+                            title: 'treeTable2222'
+                        }
+                    },
+                    {
+                        path: 'TreeTable3',
+                        name: 'TreeTable3',
+                        component: () => import('@/views/table/tree-table/index'),
+                        meta: {
+                            title: 'treeTable33'
+                        }
+                    }
+
+                ]
+            }
+
+        ]
+    },
+    // 系统设置
+    {
+        path: '/system',
+        component: Layout,
+        redirect: '',
+        name: 'system',
+        meta: {
+            title: '系统管理',
+            icon: 'table'
+        },
+        children: [{
+                path: 'menu',
+                name: 'menu',
+                component: () => import('@/views/system/menu'),
+                meta: {
+                    title: '菜单管理',
+                    noCache: true
+                }
+            },
+            {
+                path: 'dict',
+                name: 'dict',
+                component: () => import('@/views/system/dict'),
+                meta: {
+                    title: '字典管理'
+                }
+            }
+
+        ]
+    }
 
 ]
 
 export default new Router({
-  // mode: 'history', //后端支持可开
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRouterMap
+    // mode: 'history', //后端支持可开
+    scrollBehavior: () => ({
+        y: 0
+    }),
+    routes: constantRouterMap
 })
 export const asyncRouterMap = [
 
-  {
-    path: '/error',
-    component: Layout,
-    redirect: 'noredirect',
-    name: 'errorPages',
-    meta: {
-      title: 'errorPages',
-      icon: '404'
+    {
+        path: '/error',
+        component: Layout,
+        redirect: 'noredirect',
+        name: 'errorPages',
+        meta: {
+            title: 'errorPages',
+            icon: '404'
+        },
+        children: [{
+                path: '401',
+                component: () => import('@/views/errorPage/401'),
+                name: 'page401',
+                meta: {
+                    title: 'page401',
+                    noCache: true
+                }
+            },
+            {
+                path: '404',
+                component: () => import('@/views/errorPage/404'),
+                name: 'page404',
+                meta: {
+                    title: 'page404',
+                    noCache: true
+                }
+            }
+        ]
     },
-    children: [
-      { path: '401', component: () => import('@/views/errorPage/401'), name: 'page401', meta: { title: 'page401', noCache: true }},
-      { path: '404', component: () => import('@/views/errorPage/404'), name: 'page404', meta: { title: 'page404', noCache: true }}
-    ]
-  },
-  { path: '*', redirect: '/404', hidden: true }]
+    {
+        path: '*',
+        redirect: '/404',
+        hidden: true
+    }
+]
