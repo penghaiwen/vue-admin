@@ -6,14 +6,16 @@
       :show-timeout="200"
       :default-active="$route.path"
       :collapse="isCollapse"
-      background-color="rgb(48, 65, 86)"
+      background-color="#304156"
       text-color="white"
-      active-text-color="#42b983"
     >
       <sidebar-item :routes="permission_routers"></sidebar-item>
     </el-menu>
   </el-scrollbar>
 </template>
+
+
+
 
 <script>
 import { mapGetters } from 'vuex'

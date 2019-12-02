@@ -129,15 +129,16 @@ export const constantRouterMap = [
             {
                 path: 'TreeTable',
                 name: 'TreeTable',
-                component:Layout,
                 meta: {
-                    title: 'treeTable'
+                    title: 'treeTable',
+                     icon: 'dashboard'
                 },
-                children: [
-                    {
+                component: () => import('@/views/table/test'),
+
+                children: [{
                         path: 'TreeTable222',
                         name: 'TreeTable222',
-                        component: () => import('@/views/table/tree-table/index'),
+                        component: () => import('@/views/system/menu'),
                         meta: {
                             title: 'treeTable2222'
                         }
@@ -145,7 +146,7 @@ export const constantRouterMap = [
                     {
                         path: 'TreeTable3',
                         name: 'TreeTable3',
-                        component: () => import('@/views/table/tree-table/index'),
+                        component: () => import('@/views/table/complex-table'),
                         meta: {
                             title: 'treeTable33'
                         }
