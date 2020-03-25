@@ -9,7 +9,7 @@
       background-color="#304156"
       text-color="white"
     >
-      <sidebar-item :routes="permission_routers"></sidebar-item>
+      <sidebar-item :routes="permission_routers" :isCollapse="isCollapse"></sidebar-item>
     </el-menu>
   </el-scrollbar>
 </template>

@@ -17,7 +17,7 @@
                 </template>
 
                 <template v-for="child in item.children" v-if="!child.hidden ">
-                    <template v-if="child.children&&child.children.length>0" :is-nest="true">
+                    <!-- <template v-if="child.children&&child.children.length>0" :is-nest="true">
                         <el-menu-item :index="item.path+'/'+child.path" @mouseover.native="show=true" @mouseout.native="show=false">
                             <el-dropdown :hide-on-click="false" placement="right-start">
                                 <span class="el-dropdown-link" style="padding-right: 110px;">
@@ -32,10 +32,10 @@
                                 </el-dropdown-menu>
                             </el-dropdown>
                         </el-menu-item>
-                    </template>
-                   <!-- <el-menu :collapse="true" style="widows: 100%;" v-if="child.children&&child.children.length>0"
-                        background-color="#1f2d3d" text-color="white" active-text-color="#42b983"  class="nest-menu">
-                        <el-submenu :index="item.path+'/'+child.path"  >
+                    </template> -->
+                    <el-menu :collapse="true" style="widows: 100%;" v-if="child.children&&child.children.length>0 && !isCollapse"
+                        background-color="#1f2d3d" text-color="white"  class="nest-menu">
+                        <el-submenu :index="item.path+'/'+child.path">
 
                             <template slot="title"><span style="width: 20px; border: 1px solid red;"></span>{{generateTitle(child.meta.title)}}
 
@@ -49,8 +49,12 @@
                                 </router-link>
                             </template>
                         </el-submenu>
-                    </el-menu> -->
-                    <!-- <sidebar-item :is-nest="true" class="nest-menu" v-if="child.children&&child.children.length>0" :routes="[child]" :key="child.path"></sidebar-item> -->
+                    </el-menu>
+                    
+                    <sidebar-item :is-nest="true" class="nest-menu" v-else-if="child.children&&child.children.length>0 && isCollapse"
+                        :routes="[child]" :key="child.path"></sidebar-item>
+                    
+                    
                     <router-link v-else :to="item.path+'/'+child.path" :key="child.name">
                         <el-menu-item :index="item.path+'/'+child.path">
                             <svg-icon v-if="child.meta&&child.meta.icon" :icon-class="child.meta.icon"></svg-icon>
@@ -81,6 +85,10 @@
                 type: Array
             },
             isNest: {
+                type: Boolean,
+                default: false
+            },
+            isCollapse: {
                 type: Boolean,
                 default: false
             }

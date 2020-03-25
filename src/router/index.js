@@ -133,7 +133,7 @@ export const constantRouterMap = [
                     title: 'treeTable',
                      icon: 'dashboard'
                 },
-                component: () => import('@/views/table/test'),
+                component: () => import('@/App'),
 
                 children: [{
                         path: 'TreeTable222',
