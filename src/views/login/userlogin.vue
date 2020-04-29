@@ -19,6 +19,7 @@
 
 <script>
 import { isvalidUsername } from '@/utils/validate'
+import {login} from '@/api/login.js'
 export default {
   name: 'userlogin',
   data() {
@@ -68,6 +69,7 @@ export default {
     }
   },
   created() {
+      this.getCit();
   },
   mounted() {},
   computed: {
@@ -87,6 +89,10 @@ export default {
           })
         }
       })
+    },
+   async getCit(){
+       let r = await login("admin","123456");
+       console.log(r);
     }
   }
 }

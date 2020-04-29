@@ -44,7 +44,7 @@
         </div>
 
         <!--编辑界面-->
-        <el-dialog :title="dialogTitle" :visible.sync="dialogFormVisible" :close-on-click-modal="false" width="800px">
+        <el-dialog :title="dialogTitle" :visible.sync="dialogFormVisible" :close-on-click-modal="false">
             <el-form :model="form" label-width="150px" :rules="formRules" ref="form">
                 <div class="row-input">
                     <el-form-item label="姓名" prop="name">

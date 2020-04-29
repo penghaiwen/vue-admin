@@ -9,7 +9,7 @@ import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 import '@/styles/index.scss' // global css
 
-import './mock' // simulation data
+
 
 // font-awesome
 import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'

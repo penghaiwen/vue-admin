@@ -2,12 +2,24 @@ import request from '@/utils/request'
 
 export function login(username, password) {
   return request({
-    url: '/user/login',
-    method: 'post',
+    url: '/oauth/token',
+    method: 'POST',
     data: {
       username,
-      password
-    }
+      password,
+      grant_type: 'password',
+      client_id:'pro',
+      scope:'all',
+      client_secret:'123'
+    },
+
+  })
+}
+
+export function getCit() {
+  return request({
+    url: '/aaa/get',
+    method: 'get'
   })
 }
 
