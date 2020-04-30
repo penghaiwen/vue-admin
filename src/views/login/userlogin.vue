@@ -69,7 +69,7 @@ export default {
     }
   },
   created() {
-      this.getCit();
+     // this.getCit();
   },
   mounted() {},
   computed: {
@@ -90,10 +90,7 @@ export default {
         }
       })
     },
-   async getCit(){
-       let r = await login("admin","123456");
-       console.log(r);
-    }
+   
   }
 }
 </script>
